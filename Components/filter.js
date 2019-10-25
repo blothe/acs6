@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     height: 70,
     width: 350,
-    backgroundColor: "white",
+    // backgroundColor: "white",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center"
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     height: 60,
     width: 60,
     borderRadius: 50,
-    backgroundColor: "pink"
+    backgroundColor: "#EFDCE0"
   },
   list: {
     height: 400,
