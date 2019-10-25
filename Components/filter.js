@@ -1,5 +1,8 @@
 import React from 'react'
 import { View, Text, TextInput, StyleSheet, TouchableOpacity} from 'react-native'
+
+
+
 // import InfoIcon from '@material-ui/icons/Info';
 
 class Filter extends React.Component {
@@ -25,6 +28,10 @@ class Filter extends React.Component {
           </TouchableOpacity>
         </View>
 
+        <View style={styles.list}>
+          <Text>Affichage de mes résultats sous forme de boutons liste</Text>
+        </View>
+
       </View>
     )
   }
@@ -41,7 +48,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
-    marginTop: 30,
+    marginTop: 40,
     fontSize: 24,
     textAlign: "center"
 
@@ -54,13 +61,14 @@ const styles = StyleSheet.create({
   searchb: {
     height: 45,
     width: 300,
-    paddingTop: 10,
+    marginTop: 20,
     backgroundColor: "white",
     borderRadius: 20,
 
   },
   content_categories: {
-    marginTop: 40,
+    marginTop: 60,
+    marginLeft: 30,
     height: 70,
     width: 350,
     backgroundColor: "white",
@@ -73,6 +81,15 @@ const styles = StyleSheet.create({
     width: 60,
     borderRadius: 50,
     backgroundColor: "pink"
+  },
+  list: {
+    height: 400,
+    width: 350,
+    backgroundColor: "white",
+    marginTop: 80,
+    marginLeft: 30,
+    justifyContent: "center"
   }
+
 });
 export default Filter
