@@ -8,7 +8,7 @@ class Home extends React.Component {
         <View style={styles.content}>
           <View style={styles.content_txt}>
             <Text style={styles.welcome}>BIENVENUE SUR</Text>
-            <Text style={styles.appname}>HANDY&lt;C&gt;APP'</Text>
+            <Text style={styles.appname}>&lt; nom de l'appli &gt;</Text>
             <Text style={styles.appdesc}>LOREM IPSUM NEQUE PORRO ET CAETERA</Text>
           </View>
           <TouchableOpacity style={styles.content_btn}>

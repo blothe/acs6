@@ -1,11 +1,11 @@
 import React from 'react'
-import Home from './Components/Home'
+import Main from './Components/Main'
 import { StyleSheet } from 'react-native'
 
 export default class App extends React.Component {
   render() {
     return (
-      <Home/>
+      <Main/>
     )
   }
 }
