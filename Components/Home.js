@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#404958',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   content: {
     width: '100%',
@@ -35,22 +35,22 @@ const styles = StyleSheet.create({
   },
   content_txt: {
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   welcome: {
     color: 'white',
     fontSize: 24,
-    margin: 2
+    margin: 2,
   },
   appname: {
     color: 'white',
     fontSize: 48,
-    margin: 2
+    margin: 2,
   },
   appdesc: {
     color: 'white',
     fontSize: 12,
-    margin: 2
+    margin: 2,
   },
   content_btn: {
     width: '96%',
@@ -58,12 +58,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#7D9D7F',
-    borderRadius: 17
+    borderRadius: 17,
   },
   content_btn_txt: {
     color: 'white',
     fontSize: 24,
-    textAlign: 'center'
+    textAlign: 'center',
   }
 });
 
