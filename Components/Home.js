@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, TouchableHighlight } from 'react-native'
 
 class Home extends React.Component {
   render() {
@@ -11,9 +11,9 @@ class Home extends React.Component {
             <Text style={styles.appname}>HANDY&lt;C&gt;APP'</Text>
             <Text style={styles.appdesc}>LOREM IPSUM NEQUE PORRO ET CAETERA</Text>
           </View>
-          <TouchableOpacity style={styles.content_btn}>
+          <TouchableHighlight style={styles.content_btn}>
             <Text style={styles.content_btn_txt}>ENTRER</Text>
-          </TouchableOpacity>
+          </TouchableHighlight>
         </View>
       </View>
     )
