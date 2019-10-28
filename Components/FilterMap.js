@@ -17,3 +17,5 @@ const styles = StyleSheet.create({
     backgroundColor: "blue"
   }
 })
+
+export default FilterMap
