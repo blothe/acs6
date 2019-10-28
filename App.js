@@ -1,12 +1,13 @@
 import React from 'react'
 import Filter from './Components/Filter'
+import Home from './Components/Home'
+import Main from './Components/Main'
 import { StyleSheet } from 'react-native'
-
 
 export default class App extends React.Component {
   render() {
     return (
-      <Filter/>
+      <Home/>
     )
   }
 }
