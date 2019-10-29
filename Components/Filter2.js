@@ -14,13 +14,13 @@ class Filter2 extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>INFO</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
                 <Icon name='info' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>ASSO</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
                 <Icon name='users' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
@@ -28,13 +28,13 @@ class Filter2 extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>STRUCTURE</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
                 <Icon name='home' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>SCOLARITÉ</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
                 <Icon name='graduation-cap' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
@@ -42,13 +42,13 @@ class Filter2 extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>RETOUR</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
                 <Icon name='arrow-left' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>VALIDER</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
                 <Icon name='check' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
