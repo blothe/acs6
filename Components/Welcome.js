@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 
-class Home extends React.Component {
+class Welcome extends React.Component {
   render() {
     return (
       <View style={styles.main}>
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     height: 48,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#7D9D7F',
     borderRadius: 17,
+    backgroundColor: '#7D9D7F',
   },
   content_btn_txt: {
     color: 'white',
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Home
+export default Welcome
