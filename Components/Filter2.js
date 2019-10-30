@@ -1,8 +1,14 @@
 import React from 'react'
 import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
+import { getStructureApi } from '../API/DBApi'
 
 class Filter2 extends React.Component {
+
+  _loadStructure(){
+    getStructureApi("mdph").then(data => console.log(data))
+  }
+
   render() {
     return (
       <View style={styles.main}>
@@ -14,7 +20,7 @@ class Filter2 extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>INFO</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
+              <TouchableOpacity style={styles.cat_btn} onPress={() => this._loadStructure()}>
                 <Icon name='info' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>

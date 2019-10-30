@@ -13,7 +13,7 @@ export default class App extends React.Component {
   render() {
     return (
       // <FilterMap/>
-      <Filter1/>
+      <Filter2/>
     )
   }
 }
