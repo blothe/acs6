@@ -4,8 +4,8 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 import { getStructureApi } from '../API/DBApi'
 
 class Filter2 extends React.Component {
-  displayFilterMap(){
-    this.props.navigation.navigate('FilterMap')
+  displayLocalisation(){
+    this.props.navigation.navigate('Localisation')
   }
 
   render() {
@@ -53,7 +53,7 @@ class Filter2 extends React.Component {
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>VALIDER</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={()=>this.displayFilterMap()}>
+              <TouchableOpacity style={styles.cat_btn} onPress={()=>this.displayLocalisation()}>
                 <Icon name='check' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>

@@ -3,6 +3,7 @@ import {createStackNavigator} from 'react-navigation-stack'
 import Welcome from '../Components/Welcome'
 import Structure from '../Components/Structure'
 import Handicap from '../Components/Handicap'
+import Localisation from '../Components/Localisation'
 import FilterMap from '../Components/FilterMap'
 
 const MainNavigator = createStackNavigator({
@@ -16,6 +17,10 @@ const MainNavigator = createStackNavigator({
   },
   Handicap: {
     screen: Handicap,
+    navigationOptions: {header: null, }
+  },
+  Localisation: {
+    screen: Localisation,
     navigationOptions: {header: null, }
   },
   FilterMap: {
