@@ -1,5 +1,5 @@
 import React from 'react'
-import MapView from 'react-native-maps';
+import MapView, {Marker, Callout} from 'react-native-maps';
 import { View, StatusBar, Text, StyleSheet, Dimensions, Platform} from 'react-native'
 
 class FilterMap extends React.Component {
@@ -19,15 +19,22 @@ class FilterMap extends React.Component {
       <View style={styles.content_btn}>
       <Text> Nouvelle recherche</Text>
       </View>
-        <MapView
-          style={styles.mapStyle}
+        <MapView   style={styles.mapStyle}
           initialRegion={{
-          latitude: 46.9861191,
-          longitude: 3.1422382,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-          }}
-     />
+              latitude: 46.9861191,
+              longitude: 3.1422382,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+        >
+        <Marker
+            coordinate={
+            {latitude: 46.9861191,
+            longitude: 3.1422382}}
+            title={"title"}
+            description={"description"}
+        />
+        </MapView>
       </View>
     )
   }
@@ -50,7 +57,8 @@ const styles = StyleSheet.create({
   },
   mapStyle: {
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height
+    height: Dimensions.get('window').height,
+    zIndex:-1
   }
 })
 
