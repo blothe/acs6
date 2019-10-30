@@ -1,23 +1,11 @@
 import React from 'react'
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, TouchableHighlight } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import { getStructureApi } from '../API/DBApi'
 
-class Filter2 extends React.Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      // info : []
-      // "asso" : [1],
-      // "structure" : [3],
-      // "scolarite" : [5]
-    }
-  }
-  _loadStructure(){
-    getStructureApi("{4}").then(data => this.setState({info: data.results}))
-  }
-  changeColor(){
-    cat_btn: 
+class Filter1 extends React.Component {
+
+  displayFilterMap(){
+    this.props.navigation.navigate('FilterMap')
   }
 
   render() {
@@ -25,47 +13,47 @@ class Filter2 extends React.Component {
       <View style={styles.main}>
         <View style={styles.head}>
           <Text style={styles.appli}>&lt; nom de l'appli &gt;</Text>
-          <TextInput style={styles.pages}>RECHERCHE</TextInput>
+          <Text style={styles.pages}>HANDICAP</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.row}>
             <View style={styles.cat}>
-              <Text style={styles.cat_txt}>INFO</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={() => this.state.info}>
-                <Icon name='info' style={styles.cat_btn_ico}/>
-              </TouchableOpacity>
+              <Text style={styles.cat_txt}>AUDITIF</Text>
+              <TouchableHighlight style={styles.cat_btn}>
+                <Icon name='deaf' style={styles.cat_btn_ico}/>
+              </TouchableHighlight>
             </View>
             <View style={styles.cat}>
-              <Text style={styles.cat_txt}>ASSO</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
-                <Icon name='users' style={styles.cat_btn_ico}/>
-              </TouchableOpacity>
+              <Text style={styles.cat_txt}>MENTAL</Text>
+              <TouchableHighlight style={styles.cat_btn}>
+                <Icon name='puzzle-piece' style={styles.cat_btn_ico}/>
+              </TouchableHighlight>
             </View>
           </View>
           <View style={styles.row}>
             <View style={styles.cat}>
-              <Text style={styles.cat_txt}>STRUCTURE</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
-                <Icon name='home' style={styles.cat_btn_ico}/>
+              <Text style={styles.cat_txt}>MOTEUR</Text>
+              <TouchableOpacity style={styles.cat_btn}>
+                <Icon name='wheelchair' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
-              <Text style={styles.cat_txt}>SCOLARITÉ</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
-                <Icon name='graduation-cap' style={styles.cat_btn_ico}/>
+              <Text style={styles.cat_txt}>VISUEL</Text>
+              <TouchableOpacity style={styles.cat_btn}>
+                <Icon name='blind' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
           </View>
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>RETOUR</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
+              <TouchableOpacity style={styles.cat_btn} onPress={()=> this.props.navigation.goBack()}>
                 <Icon name='arrow-left' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>VALIDER</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
+              <TouchableOpacity style={styles.cat_btn} onPress={()=>this.displayFilterMap()}>
                 <Icon name='check' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
@@ -138,4 +126,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Filter2
+export default Filter1
