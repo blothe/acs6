@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View, Text, TextInput, TouchableOpacity, TouchableHighlight } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
-class Filter1 extends React.Component {
+class Handicap extends React.Component {
 
   displayFilterMap(){
     this.props.navigation.navigate('FilterMap')
@@ -126,4 +126,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Filter1
+export default Handicap

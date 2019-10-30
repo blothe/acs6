@@ -3,8 +3,7 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-nativ
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { getStructureApi } from '../API/DBApi'
 
-class Filter2 extends React.Component {
-<<<<<<< HEAD:Components/Filter2.js
+class Structure extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -18,16 +17,15 @@ class Filter2 extends React.Component {
     getStructureApi("{4}").then(data => this.setState({info: data.results}))
   }
   changeColor(){
-    cat_btn: 
+    this.color({
+      backgroundColor: "green"
+    })
   }
-
-=======
 
   displayFilterMap(){
     this.props.navigation.navigate('FilterMap')
   }
-  
->>>>>>> c91ef2127a0f7963a23492240ead1d34cd3f121c:Components/Structure.js
+
   render() {
     return (
       <View style={styles.main}>
@@ -67,21 +65,16 @@ class Filter2 extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>RETOUR</Text>
-<<<<<<< HEAD:Components/Filter2.js
+
               <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
-=======
+              </TouchableOpacity>
               <TouchableOpacity style={styles.cat_btn} onPress= {()=> this.props.navigation.goBack()}>
->>>>>>> c91ef2127a0f7963a23492240ead1d34cd3f121c:Components/Structure.js
                 <Icon name='arrow-left' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>VALIDER</Text>
-<<<<<<< HEAD:Components/Filter2.js
-              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
-=======
               <TouchableOpacity style={styles.cat_btn} onPress={()=>this.displayFilterMap()}>
->>>>>>> c91ef2127a0f7963a23492240ead1d34cd3f121c:Components/Structure.js
                 <Icon name='check' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
@@ -154,4 +147,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Filter2
+export default Structure
