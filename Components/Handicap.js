@@ -3,6 +3,11 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity, TouchableHighlight
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
 class Filter1 extends React.Component {
+
+  displayFilterMap(){
+    this.props.navigation.navigate('FilterMap')
+  }
+
   render() {
     return (
       <View style={styles.main}>
@@ -42,13 +47,13 @@ class Filter1 extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>RETOUR</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={styles.cat_btn} onPress={()=> this.props.navigation.goBack()}>
                 <Icon name='arrow-left' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>VALIDER</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={styles.cat_btn} onPress={()=>this.displayFilterMap()}>
                 <Icon name='check' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
