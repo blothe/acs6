@@ -4,9 +4,17 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 import { getStructureApi } from '../API/DBApi'
 
 class Filter2 extends React.Component {
-
+  constructor(props){
+    super(props)
+    this.state = {
+      // info : []
+      // "asso" : [1],
+      // "structure" : [3],
+      // "scolarite" : [5]
+    }
+  }
   _loadStructure(){
-    getStructureApi("mdph").then(data => console.log(data))
+    getStructureApi("{4}").then(data => this.setState({info: data.results}))
   }
 
   render() {
@@ -14,13 +22,13 @@ class Filter2 extends React.Component {
       <View style={styles.main}>
         <View style={styles.head}>
           <Text style={styles.appli}>&lt; nom de l'appli &gt;</Text>
-          <Text style={styles.pages}>RECHERCHE</Text>
+          <TextInput style={styles.pages}>RECHERCHE</TextInput>
         </View>
         <View style={styles.body}>
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>INFO</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={() => this._loadStructure()}>
+              <TouchableOpacity style={styles.cat_btn} onPress={() => this.state.info}>
                 <Icon name='info' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
