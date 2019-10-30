@@ -4,8 +4,20 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 import { getStructureApi } from '../API/DBApi'
 
 class Filter2 extends React.Component {
-  displayFilterMap(){
-    this.props.navigation.navigate('FilterMap')
+  constructor(props){
+    super(props)
+    this.state = {
+      // info : []
+      // "asso" : [1],
+      // "structure" : [3],
+      // "scolarite" : [5]
+    }
+  }
+  _loadStructure(){
+    getStructureApi("{4}").then(data => this.setState({info: data.results}))
+  }
+  changeColor(){
+    cat_btn: 
   }
 
   render() {
@@ -47,13 +59,13 @@ class Filter2 extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>RETOUR</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress= {()=> this.props.navigation.goBack()}>
+              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
                 <Icon name='arrow-left' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>VALIDER</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={()=>this.displayFilterMap()}>
+              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
                 <Icon name='check' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>

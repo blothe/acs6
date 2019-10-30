@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, TextInput, TouchableOpacity, TouchableHighlight } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
 class Filter1 extends React.Component {
@@ -19,15 +19,15 @@ class Filter1 extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>AUDITIF</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableHighlight style={styles.cat_btn}>
                 <Icon name='deaf' style={styles.cat_btn_ico}/>
-              </TouchableOpacity>
+              </TouchableHighlight>
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>MENTAL</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableHighlight style={styles.cat_btn}>
                 <Icon name='puzzle-piece' style={styles.cat_btn_ico}/>
-              </TouchableOpacity>
+              </TouchableHighlight>
             </View>
           </View>
           <View style={styles.row}>
