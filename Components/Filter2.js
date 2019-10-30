@@ -16,6 +16,9 @@ class Filter2 extends React.Component {
   _loadStructure(){
     getStructureApi("{4}").then(data => this.setState({info: data.results}))
   }
+  changeColor(){
+    cat_btn: 
+  }
 
   render() {
     return (
