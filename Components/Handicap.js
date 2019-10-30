@@ -2,47 +2,47 @@ import React from 'react'
 import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
-class Filter2 extends React.Component {
+class Filter1 extends React.Component {
   render() {
     return (
       <View style={styles.main}>
         <View style={styles.head}>
           <Text style={styles.appli}>&lt; nom de l'appli &gt;</Text>
-          <Text style={styles.pages}>RECHERCHE</Text>
+          <Text style={styles.pages}>HANDICAP</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.row}>
             <View style={styles.cat}>
-              <Text style={styles.cat_txt}>INFO</Text>
+              <Text style={styles.cat_txt}>AUDITIF</Text>
               <TouchableOpacity style={styles.cat_btn}>
-                <Icon name='info' style={styles.cat_btn_ico}/>
+                <Icon name='deaf' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
-              <Text style={styles.cat_txt}>ASSO</Text>
+              <Text style={styles.cat_txt}>MENTAL</Text>
               <TouchableOpacity style={styles.cat_btn}>
-                <Icon name='users' style={styles.cat_btn_ico}/>
+                <Icon name='puzzle-piece' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
           </View>
           <View style={styles.row}>
             <View style={styles.cat}>
-              <Text style={styles.cat_txt}>STRUCTURE</Text>
+              <Text style={styles.cat_txt}>MOTEUR</Text>
               <TouchableOpacity style={styles.cat_btn}>
-                <Icon name='home' style={styles.cat_btn_ico}/>
+                <Icon name='wheelchair' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
-              <Text style={styles.cat_txt}>SCOLARITÉ</Text>
+              <Text style={styles.cat_txt}>VISUEL</Text>
               <TouchableOpacity style={styles.cat_btn}>
-                <Icon name='graduation-cap' style={styles.cat_btn_ico}/>
+                <Icon name='blind' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
           </View>
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>RETOUR</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={styles.cat_btn} onPress={()=> this.props.navigation.goBack()}>
                 <Icon name='arrow-left' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
@@ -121,4 +121,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Filter2
+export default Filter1
