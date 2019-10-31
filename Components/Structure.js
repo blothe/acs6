@@ -67,7 +67,7 @@ class Filter2 extends React.Component {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: '#404958',
+    backgroundColor: '#284B63',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -93,10 +93,11 @@ const styles = StyleSheet.create({
     width: '96%',
     height: 48,
     borderRadius: 50,
-    backgroundColor: 'white',
+    backgroundColor: '#e0f5f5',
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 24,
+    color: '#00858e',
   },
   row: {
     flex: 3,
@@ -117,12 +118,13 @@ const styles = StyleSheet.create({
     width: '75%',
     height: '75%',
     borderRadius: 25,
-    backgroundColor: 'white',
+    backgroundColor: '#e0f5f5',
     alignItems: 'center',
     justifyContent: 'center',
   },
   cat_btn_ico: {
     fontSize: 96,
+    color: '#00858e',
   }
 });
 
