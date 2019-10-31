@@ -9,6 +9,7 @@ class Filter3 extends React.Component {
   }
   displayFilterMap(){
     this.props.navigation.navigate('FilterMap')
+
   }
   render() {
     return (
@@ -140,7 +141,7 @@ class Filter3 extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>RETOUR</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={styles.cat_btn} onPress={()=> this.props.navigation.goBack()}>
                 <Icon name='arrow-left' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
@@ -160,7 +161,7 @@ class Filter3 extends React.Component {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: '#404958',
+    backgroundColor: '#284B63',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -186,10 +187,11 @@ const styles = StyleSheet.create({
     width: '96%',
     height: 48,
     borderRadius: 50,
-    backgroundColor: 'white',
+    backgroundColor: '#e0f5f5',
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 24,
+    color: '#00858e',
   },
   row: {
     flex: 3,
@@ -210,12 +212,13 @@ const styles = StyleSheet.create({
     width: '75%',
     height: '75%',
     borderRadius: 25,
-    backgroundColor: 'white',
+    backgroundColor: '#e0f5f5',
     alignItems: 'center',
     justifyContent: 'center',
   },
   cat_btn_ico: {
     fontSize: 96,
+    color: '#00858e',
   },
   geoloc: {
     width: '96%',
@@ -231,9 +234,10 @@ const styles = StyleSheet.create({
     margin: 5,
     paddingLeft: 25,
     borderRadius: 25,
-    backgroundColor: 'white',
+    backgroundColor: '#e0f5f5',
     textAlignVertical: 'center',
     fontSize: 24,
+    color: '#00858e',
   },
   field2: {
     width: '96%',
@@ -241,9 +245,10 @@ const styles = StyleSheet.create({
     margin: 5,
     paddingLeft: 25, // Android
     borderRadius: 25, // Android
-    backgroundColor: 'white',
+    backgroundColor: '#e0f5f5',
     textAlignVertical: 'center', // Android
     fontSize: 24, // Android
+    color: '#00858e',
   }
 });
 
