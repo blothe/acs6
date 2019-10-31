@@ -24,6 +24,7 @@ class FilterMap extends React.Component {
       structure:0,
       handicap:2
     }
+    console.log(this.props.navigation.state.params)
   }
 
 // Affiche le type de structure en fonction de son numéro
