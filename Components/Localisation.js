@@ -3,10 +3,16 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity, Picker } from 'rea
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
 class Filter3 extends React.Component {
+constructor(props){
+  super(props)
+  this.typestructure = this.props.navigation.state.params
+  console.log(this.typestructure)
+}
   state = {dpt: ''}
   updateDpt = (dpt) => {
     this.setState({ dpt: dpt })
   }
+
   displayFilterMap(){
     this.props.navigation.navigate('FilterMap')
 
@@ -15,7 +21,7 @@ class Filter3 extends React.Component {
     return (
       <View style={styles.main}>
         <View style={styles.head}>
-          <Text style={styles.appli}>&lt; nom de l'appli &gt;</Text>
+          <Text style={styles.appli}>&lt; HANDY' APP &gt;</Text>
           <Text style={styles.pages}>LOCALISATION</Text>
         </View>
         <View style={styles.body}>
@@ -186,8 +192,8 @@ const styles = StyleSheet.create({
   pages: {
     width: '96%',
     height: 48,
-    borderRadius: 50,
-    backgroundColor: '#e0f5f5',
+  //   borderRadius: 50,
+  //   backgroundColor: '#e0f5f5',
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 24,

@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 import { getStructureApi } from '../API/DBApi'
 
 class Filter2 extends React.Component {
+//INFO: structure 4 et 2
   constructor(props){
   super(props)
   this.state ={
@@ -16,7 +17,7 @@ class Filter2 extends React.Component {
   this.onPressedScol = 0;
   }
   displayLocalisation(){
-    this.props.navigation.navigate('Localisation')
+    this.props.navigation.navigate('Localisation', {association:this.onPressedAss, structure:this.onPressedStruct, school:this.onPressedScol} )
   }
   _onPressedAss(){
     if (this.onPressedAss) {
@@ -24,7 +25,7 @@ class Filter2 extends React.Component {
       this.setState({assoColor: 'white'});
     } else {
       this.onPressedAss = 1;
-      this.setState({assoColor: '#b7ecec'});
+      this.setState({assoColor: '#f4c095'});
     }
   console.log(this.onPressedAss)
   }
@@ -34,7 +35,7 @@ class Filter2 extends React.Component {
       this.setState({structColor: 'white'});
     } else {
       this.onPressedStruct = 1;
-      this.setState({structColor: '#b7ecec'});
+      this.setState({structColor: '#f4c095'});
     }
     console.log(this.onPressedStruct)
   }
@@ -44,7 +45,7 @@ class Filter2 extends React.Component {
       this.setState({scolColor: 'white'});
     } else {
       this.onPressedScol = 1;
-      this.setState({scolColor: '#b7ecec'});
+      this.setState({scolColor: '#f4c095'});
     }
     console.log(this.onPressedScol)
   }
