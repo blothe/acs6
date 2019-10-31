@@ -3,32 +3,22 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity } from 'react-nativ
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { getStructureApi } from '../API/DBApi'
 
-class Structure extends React.Component {
+class Filter2 extends React.Component {
+
   constructor(props){
     super(props)
-    this.state = {
-      // info : []
-      // "asso" : [1],
-      // "structure" : [3],
-      // "scolarite" : [5]
-    }
+    this.state = {backgroundColor: "green"}
   }
-  _loadStructure(){
-    getStructureApi("{4}").then(data => this.setState({info: data.results}))
+  displayLocalisation(){
+    this.props.navigation.navigate('Localisation')
   }
-  changeColor(){
-    this.color({
-      backgroundColor: "green"
+  onPress = () => {
+    this.setState({
+      color: this.state.backgroundColor
     })
   }
-
-
-class Structure extends React.Component {
-  displayFilterMap(){
-    this.props.navigation.navigate('FilterMap')
-  }
-
   render() {
+
     return (
       <View style={styles.main}>
         <View style={styles.head}>
@@ -39,7 +29,7 @@ class Structure extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>INFO</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={() => this.state.info}>
+              <TouchableOpacity style={styles.cat_btn} onPress={() =>this.setState.backgroundColor}>
                 <Icon name='info' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
@@ -73,7 +63,7 @@ class Structure extends React.Component {
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>VALIDER</Text>
-              <TouchableOpacity style={styles.cat_btn} onPress={()=>this.displayFilterMap()}>
+              <TouchableOpacity style={styles.cat_btn} onPress={()=>this.displayLocalisation()}>
                 <Icon name='check' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
@@ -146,4 +136,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Structure
+export default Filter2

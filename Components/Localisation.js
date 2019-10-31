@@ -7,6 +7,9 @@ class Filter3 extends React.Component {
   updateDpt = (dpt) => {
     this.setState({ dpt: dpt })
   }
+  displayFilterMap(){
+    this.props.navigation.navigate('FilterMap')
+  }
   render() {
     return (
       <View style={styles.main}>
@@ -143,7 +146,7 @@ class Filter3 extends React.Component {
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>VALIDER</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={styles.cat_btn} onPress={()=>this.displayFilterMap()}>
                 <Icon name='check' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>

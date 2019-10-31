@@ -1,7 +1,7 @@
 import React from 'react'
 import MapView, {Marker, Callout} from 'react-native-maps'
-import { View, StatusBar, Text, StyleSheet, Dimensions, Platform} from 'react-native'
-
+import { View, StatusBar, Text, StyleSheet, Dimensions, Platform, Button} from 'react-native'
+import { StackActions, NavigationActions, Const } from 'react-navigation';
 class FilterMap extends React.Component {
 //recuperer la hauteur du statusbar*/
   constructor(props) {
@@ -10,14 +10,25 @@ class FilterMap extends React.Component {
       statusBarHeight : StatusBar.currentHeight,
     }
   }
+
   //position initial sur la carte
   render() {
+
+    const resetAction = StackActions.reset({
+      index: 0,
+      key: null,
+      actions: [
+      NavigationActions.navigate({ routeName: 'Welcome' })
+      ],
+    });
+
     return (
       <View style={styles.container}>
-        {/*permet d'ajouter la hauteur du statusbar*/}
         <View style={{height: this.state.statusBarHeight}} ></View>
-        <View style={styles.content_btn}>
-          <Text> Nouvelle recherche</Text>
+        <View >
+          <Button style={styles.content_btn}
+          title="Nouvelle recherche" onPress={()=>this.props.navigation.dispatch(resetAction)}
+          />
         </View>
         <MapView
           style={styles.mapStyle}
@@ -28,7 +39,7 @@ class FilterMap extends React.Component {
           longitudeDelta: 0.0421,
           }}
         >
-          <Marker coordinate={{latitude:46.99283981323200000000, longitude:3.16045999526980000000}}>
+          <Marker pinColor="blue" coordinate={{latitude:46.99283981323200000000, longitude:3.16045999526980000000}}>
             <Callout>
               <Text>Nom de structure</Text>
               <Text>Adresse / Ville</Text>
