@@ -6,7 +6,6 @@ class Filter3 extends React.Component {
 constructor(props){
   super(props)
   this.typestructure = this.props.navigation.state.params
-  console.log(this.typestructure)
 }
   state = {dpt: ''}
   updateDpt = (dpt) => {

@@ -2,6 +2,8 @@ import React from 'react'
 import MapView, {Marker, Callout} from 'react-native-maps'
 import { View, StatusBar, Text, StyleSheet, Dimensions, Platform, Button, FlatList} from 'react-native'
 import { StackActions, NavigationActions, Const } from 'react-navigation';
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
 // import markers from '../Tmp/data'
 import { getCityApi, getLocationApi, getDepartementApi } from '../API/DBApi'
 
@@ -13,18 +15,78 @@ class FilterMap extends React.Component {
     this.state= {
       statusBarHeight : StatusBar.currentHeight,
       ville: "",
-      department: "01",
+      department: "",
       markers: "",
       region: {
-	      latitude: 48.8534,
-	      longitude: 2.3488,
+	      latitude: 46.990896,
+	      longitude: 3.162845,
 	      latitudeDelta: 0.0922,
 	      longitudeDelta: 0.0421,
 	    },
-      structure:0,
-      handicap:2
+      structure:this._defineInitialStructure(),
+      handicap:this._defineInitialHandicap()
     }
-    console.log(this.props.navigation.state.params)
+
+    this._defineInitialRegion()
+  }
+
+  _getLocationAsync = async () => {
+    let { status } = await Permissions.askAsync(Permissions.LOCATION);
+    if (status !== 'granted') {
+      this.setState({
+        errorMessage: 'Permission to access location was denied',
+      });
+    }
+
+    let location = await Location.getCurrentPositionAsync({});
+
+    const { latitude, longitude } = location.coords;
+
+    this.setState({
+      region:{
+        longitude: location.coords.longitude,
+        latitude: location.coords.latitude,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421
+      }
+    });
+  };
+
+  _defineInitialStructure(){
+    let tmp = "";
+
+    if(this.props.navigation.state.params.structures != undefined){
+      if(this.props.navigation.state.params.structures.association != 0) tmp += "-1"
+      if(this.props.navigation.state.params.structures.school != 0) tmp += "-5"
+      if(this.props.navigation.state.params.structures.structure != 0) tmp += "-3"
+
+      tmp = tmp.substring(1)
+    }
+    else
+      tmp = 0
+
+    return tmp
+  }
+
+  _defineInitialHandicap(){
+    let tmp = "";
+
+    if(this.props.navigation.state.params.handicaps != undefined){
+      if(this.props.navigation.state.params.handicaps.association != 0) tmp += "-1"
+      if(this.props.navigation.state.params.handicaps.school != 0) tmp += "-5"
+      if(this.props.navigation.state.params.handicaps.structure != 0) tmp += "-3"
+
+      tmp = tmp.substring(1)
+    }
+    else
+      tmp = 0
+
+    return tmp
+  }
+
+  _defineInitialRegion(){
+    if(this.props.navigation.state.params.typeLocalisation == 1)
+      this._getLocationAsync()
   }
 
 // Affiche le type de structure en fonction de son numéro

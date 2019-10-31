@@ -4,7 +4,7 @@ export function getLocationApi(longitude, latitude, structure, handicap){
   let url = "http://api-mobile.promo-29.codeur.online/api/structures/?lg="+longitude+"&lat="+latitude+"&apikey=" + API_TOKEN
   if(structure != 0) url += "&structure="+structure
   if(handicap != 0) url += "&handicap="+handicap
-
+console.log(url)
   return fetch(url)
     .then((response) => response.json())
     .catch((error) => console.log())
