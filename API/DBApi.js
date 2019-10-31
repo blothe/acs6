@@ -7,7 +7,7 @@ export function getLocationApi(){
     .catch((error) => console.log())
 
 }
-export function getCityApi(){
+export function getCityApi(text){
   const url = "http://api-mobile.promo-29.codeur.online/api/ville/?ville=Nevers&apikey=" + API_TOKEN
   return fetch(url)
    .then((response) => response.json())

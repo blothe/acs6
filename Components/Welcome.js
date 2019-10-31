@@ -26,13 +26,13 @@ class Welcome extends React.Component {
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>STRUCTURE</Text>
               <TouchableOpacity style={styles.cat_btn} onPress={()=>this.displayFormStructure()}>
-                <Icon name='home' color="#00858e" style={styles.cat_btn_ico}/>
+                <Icon name='home' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>HANDICAP</Text>
               <TouchableOpacity style={styles.cat_btn} onPress={()=>this.displayFormHandicap()} title="typeHandicap">
-                <Icon name='wheelchair'color="#00858e" style={styles.cat_btn_ico}/>
+                <Icon name='wheelchair' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
           </View>
@@ -81,7 +81,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 17,
-    // backgroundColor: '#7D9D7F',
     backgroundColor: '#b7ecec',
   },
   content_btn_txt: {
@@ -110,14 +109,13 @@ const styles = StyleSheet.create({
     width: '60%',
     height: '60%',
     borderRadius: 25,
-    // backgroundColor: 'white',
     backgroundColor: '#e0f5f5',
     alignItems: 'center',
     justifyContent: 'center',
   },
   cat_btn_ico: {
     fontSize: 96,
-
+    color: '#00858e',
   }
 });
 

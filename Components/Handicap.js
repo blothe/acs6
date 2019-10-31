@@ -4,6 +4,56 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 
 class Handicap extends React.Component {
 
+  constructor(props){
+    super(props)
+    this.state = {
+      audiColor: "white",
+      mentalColor: "white",
+      moteurColor: "white",
+      visuelColor: "white"
+    };
+    this.onPressAudi = 0;
+    this.onPressMental = 0;
+    this.onPressMoteur = 0;
+    this.onPressVisuel = 0;
+  }
+  _onPressAudi(){
+    if (this.onPressAudi) {
+      this.onPressAudi = 0;
+      this.setState({audiColor: "white"});
+    } else {
+      this.onPressAudi = 1;
+      this.setState({audiColor: "#b7ecec"});
+    }
+  }
+  _onPressMental(){
+    if (this.onPressMental) {
+      this.onPressMental = 0;
+      this.setState({mentalColor: "white"});
+    } else {
+      this.onPressMental = 1;
+      this.setState({mentalColor: "#b7ecec"});
+    }
+  }
+  _onPressMoteur(){
+    if (this.onPressMoteur) {
+      this.onPressMoteur = 0;
+      this.setState({moteurColor: "white"});
+    } else {
+      this.onPressMoteur = 1;
+      this.setState({moteurColor: "#b7ecec"});
+    }
+  }
+  _onPressVisuel(){
+    if (this.onPressVisuel) {
+      this.onPressVisuel = 0;
+      this.setState({visuelColor: "white"});
+    } else {
+      this.onPressVisuel = 1;
+      this.setState({visuelColor: "#b7ecec"});
+    }
+  }
+
   displayLocalisation(){
     this.props.navigation.navigate('Localisation')
   }
@@ -19,13 +69,27 @@ class Handicap extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>AUDITIF</Text>
-              <TouchableHighlight style={styles.cat_btn}>
+              <TouchableHighlight style={{
+                width: '65%',
+                height: '65%',
+                borderRadius: 25,
+                backgroundColor: this.state.audiColor,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}  onPress={()=> this._onPressAudi()}>
                 <Icon name='deaf' style={styles.cat_btn_ico}/>
               </TouchableHighlight>
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>MENTAL</Text>
-              <TouchableHighlight style={styles.cat_btn}>
+              <TouchableHighlight style={{
+                width: '65%',
+                height: '65%',
+                borderRadius: 25,
+                backgroundColor: this.state.mentalColor,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }} onPress={()=> this._onPressMental()}>
                 <Icon name='puzzle-piece' style={styles.cat_btn_ico}/>
               </TouchableHighlight>
             </View>
@@ -33,13 +97,27 @@ class Handicap extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>MOTEUR</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={{
+                width: '65%',
+                height: '65%',
+                borderRadius: 25,
+                backgroundColor: this.state.moteurColor,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }} onPress={()=> this._onPressMoteur()}>
                 <Icon name='wheelchair' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>VISUEL</Text>
-              <TouchableOpacity style={styles.cat_btn}>
+              <TouchableOpacity style={{
+                width: '65%',
+                height: '65%',
+                borderRadius: 25,
+                backgroundColor: this.state.visuelColor,
+                alignItems: 'center',
+                justifyContent: 'center',
+              }} onPress={()=> this._onPressVisuel()}>
                 <Icon name='blind' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
@@ -67,7 +145,7 @@ class Handicap extends React.Component {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
-    backgroundColor: '#404958',
+    backgroundColor: '#284B63',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -93,10 +171,11 @@ const styles = StyleSheet.create({
     width: '96%',
     height: 48,
     borderRadius: 50,
-    backgroundColor: 'white',
+    backgroundColor: '#e0f5f5',
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 24,
+    color: '#00858e',
   },
   row: {
     flex: 3,
@@ -117,12 +196,13 @@ const styles = StyleSheet.create({
     width: '75%',
     height: '75%',
     borderRadius: 25,
-    backgroundColor: 'white',
+    backgroundColor: '#e0f5f5',
     alignItems: 'center',
     justifyContent: 'center',
   },
   cat_btn_ico: {
     fontSize: 96,
+    color: '#00858e',
   }
 });
 
