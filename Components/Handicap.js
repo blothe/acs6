@@ -55,7 +55,11 @@ class Handicap extends React.Component {
   }
 
   displayLocalisation(){
-    this.props.navigation.navigate('Localisation')
+    this.props.navigation.navigate('Localisation',
+    {auditif: this.onPressAudi,
+    mental: this.onPressMental,
+    moteur: this.onPressMoteur,
+    visuel: this.onPressVisuel})
   }
 
   render() {

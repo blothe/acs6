@@ -3,26 +3,31 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity, Picker } from 'rea
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
 class Filter3 extends React.Component {
+constructor(props){
+  super(props)
+  this.typestructure = this.props.navigation.state.params
+}
   state = {dpt: ''}
   updateDpt = (dpt) => {
     this.setState({ dpt: dpt })
   }
+
   displayFilterMap(){
-    this.props.navigation.navigate('FilterMap')
+    this.props.navigation.navigate('FilterMap', {structures:this.typestructure, typeLocalisation:1})
 
   }
   render() {
     return (
       <View style={styles.main}>
         <View style={styles.head}>
-          <Text style={styles.appli}>&lt; nom de l'appli &gt;</Text>
+          <Text style={styles.appli}>&lt; HANDY' APP &gt;</Text>
           <Text style={styles.pages}>LOCALISATION</Text>
         </View>
         <View style={styles.body}>
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>AUTOUR DE MOI</Text>
-              <TouchableOpacity style={[styles.cat_btn, styles.geoloc]}>
+              <TouchableOpacity style={[styles.cat_btn, styles.geoloc]} onPress={()=>this.displayFilterMap()}>
                 <Icon name='street-view' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
             </View>
@@ -186,8 +191,8 @@ const styles = StyleSheet.create({
   pages: {
     width: '96%',
     height: 48,
-    borderRadius: 50,
-    backgroundColor: '#e0f5f5',
+  //   borderRadius: 50,
+  //   backgroundColor: '#e0f5f5',
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 24,
