@@ -153,10 +153,11 @@ const styles = StyleSheet.create({
     width: '96%',
     height: 48,
     borderRadius: 50,
-    backgroundColor: 'white',
+    backgroundColor: '#e0f5f5',
     textAlign: 'center',
     textAlignVertical: 'center',
     fontSize: 24,
+    color: '#00858e',
   },
   row: {
     flex: 3,
@@ -177,12 +178,13 @@ const styles = StyleSheet.create({
     width: '65%',
     height: '65%',
     borderRadius: 25,
-    backgroundColor: 'white',
+    backgroundColor: '#e0f5f5',
     alignItems: 'center',
     justifyContent: 'center',
   },
   cat_btn_ico: {
     fontSize: 96,
+    color: '#00858e',
   }
 });
 
