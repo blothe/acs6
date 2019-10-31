@@ -22,6 +22,8 @@ class Structure extends React.Component {
     })
   }
 
+
+class Structure extends React.Component {
   displayFilterMap(){
     this.props.navigation.navigate('FilterMap')
   }
@@ -65,9 +67,6 @@ class Structure extends React.Component {
           <View style={styles.row}>
             <View style={styles.cat}>
               <Text style={styles.cat_txt}>RETOUR</Text>
-
-              <TouchableOpacity style={styles.cat_btn} onPress={() => {}}>
-              </TouchableOpacity>
               <TouchableOpacity style={styles.cat_btn} onPress= {()=> this.props.navigation.goBack()}>
                 <Icon name='arrow-left' style={styles.cat_btn_ico}/>
               </TouchableOpacity>
